@@ -4,13 +4,14 @@ import Layout from './components/Layout';
 
 import { darkTheme, lightTheme } from './styles/themes';
 import Dashboard from './pages/Dashboard';
+import List from './pages/List';
 
 export default function App() {
   return(
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
       <Layout>
-        <Dashboard />
+        <List />
       </Layout>
     </ThemeProvider>
   );

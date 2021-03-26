@@ -1,15 +1,21 @@
+import { ReactNode } from 'react';
 import { Container, TitleContainer, Controllers } from './styles';
 
-export default function ContentHeader() {
+interface ContentHeaderProps {
+   title: string;
+   lineColor: string;
+   children: ReactNode;
+}
+
+export default function ContentHeader({ title, lineColor, children }: ContentHeaderProps) {
    return(
       <Container>
-         <TitleContainer>
-            <h1>Título</h1>
+         <TitleContainer lineColor={lineColor}>
+            <h1>{title}</h1>
          </TitleContainer>
 
          <Controllers>
-            <button>BotãoA</button>
-            <button>BotãoB</button>
+            { children }
          </Controllers>
       </Container>
    );

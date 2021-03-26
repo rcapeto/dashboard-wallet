@@ -26,23 +26,23 @@ export const MenuContainer = styled.nav`
    margin-top: 50px;
    display: flex;
    flex-direction: column;
-`;
 
-export const MenuItemLink = styled.a`
-   color: ${props => props.theme.colors.info};
-   text-decoration: none;
-   transition: opacity ease 0.6s;
-   margin: 7px 0;
-   display: flex;
-   align-items: center;
+   > a {
+      color: ${props => props.theme.colors.info};
+      text-decoration: none;
+      transition: opacity ease 0.6s;
+      margin: 7px 0;
+      display: flex;
+      align-items: center;
 
-   &:hover {
-      opacity: 0.6;
-   }
+      &:hover {
+         opacity: 0.6;
+      }
 
-   svg {
-      margin-right: 10px;
-      font-size: 18px;
+      svg {
+         margin-right: 10px;
+         font-size: 18px;
+      }
    }
 `;
 

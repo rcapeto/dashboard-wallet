@@ -5,12 +5,13 @@ import {
    MdExitToApp
 } from 'react-icons/md';
 
+import { Link } from 'react-router-dom';
+
 import {
    Container,
    Header,
    LogoImg,
    MenuContainer,
-   MenuItemLink,
    Title
 } from './styles';
 
@@ -25,25 +26,25 @@ export default function Aside() {
          </Header>
 
          <MenuContainer>
-            <MenuItemLink href="#">
+            <Link to="/dashboard">
                <MdDashboard />
                Dashboard
-            </MenuItemLink>
+            </Link>
 
-            <MenuItemLink href="#">
+            <Link to="/list/entry-balance">
                <MdArrowUpward />
                Entradas
-            </MenuItemLink>
+            </Link>
 
-            <MenuItemLink href="#">
+            <Link to="/list/exit-balance">
                <MdArrowDownward />
                Saídas
-            </MenuItemLink>
+            </Link>
 
-            <MenuItemLink href="#">
+            <Link to="/">
                <MdExitToApp />
                Sair
-            </MenuItemLink>
+            </Link>
          </MenuContainer>
       </Container>
    );

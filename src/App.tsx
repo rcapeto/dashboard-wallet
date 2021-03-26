@@ -1,18 +1,14 @@
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/globalStyles';
-import Layout from './components/Layout';
 
 import { darkTheme, lightTheme } from './styles/themes';
-import Dashboard from './pages/Dashboard';
-import List from './pages/List';
+import Routes from './routes';
 
 export default function App() {
   return(
     <ThemeProvider theme={darkTheme}>
       <GlobalStyles />
-      <Layout>
-        <List />
-      </Layout>
+      <Routes />
     </ThemeProvider>
   );
 }

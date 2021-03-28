@@ -33,7 +33,7 @@ export default function List() {
    const props = useMemo<MemoProps>(() => {
       const items = {
          title: type === 'entry-balance' ? 'Entradas' : 'Saídas',
-         lineColor: type === 'entry-balance' ? '#f7931b' : '#e44c43',
+         lineColor: type === 'entry-balance' ? '#4e41f0' : '#e44c43',
          products: type === 'entry-balance' ? gains : expenses
       }
 

@@ -39,3 +39,18 @@ export const formatedYear: FormatedYear[] = [
    { year: currentYear - 1, number: currentYear - 1},
    { year: currentYear - 2, number: currentYear - 2},
 ];
+
+export const listOfMonths: string[] = [
+   'Janeiro',
+   'Fevereiro',
+   'Março',
+   'Abril',
+   'Maio',
+   'Junho',
+   'Julho',
+   'Agosto',
+   'Setembro',
+   'Outubro',
+   'Novembro',
+   'Dezembro'
+];

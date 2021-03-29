@@ -2,7 +2,8 @@ import {
    MdDashboard,
    MdArrowDownward,
    MdArrowUpward,
-   MdExitToApp
+   MdExitToApp,
+   MdClose
 } from 'react-icons/md';
 
 import { Link } from 'react-router-dom';
@@ -12,14 +13,25 @@ import {
    Header,
    LogoImg,
    MenuContainer,
-   Title
+   Title,
+   ToggleContainer
 } from './styles';
+
+import { useAuth } from '../../hooks/auth';
+import { useMenu } from '../../hooks/menu';
+import Toggle from '../Toggle';
 
 import logoImg from '../../assets/logo.svg';
 
 export default function Aside() {
+   const { logout } = useAuth();
+   const { isOpen, toggleOpenMenu } = useMenu();
+
    return(
-      <Container>
+      <Container isOpen={isOpen}>
+         <button onClick={toggleOpenMenu}>
+            <MdClose color="#fff" size={20}/>
+         </button>
          <Header>
             <LogoImg src={logoImg} alt="Minha Carteira"/>
             <Title>Minha carteira</Title>
@@ -41,11 +53,15 @@ export default function Aside() {
                Saídas
             </Link>
 
-            <Link to="/">
+            <Link to="/login" onClick={logout}>
                <MdExitToApp />
                Sair
             </Link>
          </MenuContainer>
+
+         <ToggleContainer>
+            <Toggle leftLabel="Light" rightLabel="Dark"/>
+         </ToggleContainer>
       </Container>
    );
 }

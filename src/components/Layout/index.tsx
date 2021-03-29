@@ -11,8 +11,8 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
    return(
       <Grid>
-         <MainHeader />
          <Aside />
+         <MainHeader />
          <Content>
             { children }
          </Content>

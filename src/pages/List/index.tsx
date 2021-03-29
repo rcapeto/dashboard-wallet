@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import ContentHeader from '../../components/ContentHeader';
 import Select from '../../components/Select';
 import ListCard from '../../components/ListCard';
-import { formatedMonths, formatedYear } from '../../utils';
+import { formatedMonths } from '../../utils';
 import { expenses } from '../../utils/expenses';
 import { gains } from '../../utils/gains';
 import { ItemProps } from '../../interfaces';

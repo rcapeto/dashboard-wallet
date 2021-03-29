@@ -11,6 +11,12 @@ export const Container = styled.div`
    justify-content: space-between;
    align-items: center;
    margin-bottom: 25px;
+
+   @media(max-width: 410px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+   }
 `;
 
 export const TitleContainer = styled.div<TitleContainerProps>`
@@ -30,4 +36,8 @@ export const TitleContainer = styled.div<TitleContainerProps>`
 export const Controllers = styled.div`
    display: flex;
    align-items: center;
+
+   @media(max-width: 410px) {
+      margin-top: 20px;
+   }
 `;

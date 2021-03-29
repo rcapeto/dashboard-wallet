@@ -1,11 +1,13 @@
-import { useMemo, useState, ChangeEvent } from 'react';
+import { useMemo, useState, ChangeEvent, useEffect } from 'react';
 import { Container, FlexContainer } from './styles';
 
 import ContentHeader from '../../components/ContentHeader';
 import Select from '../../components/Select';
 import WalletBox from '../../components/WalletBox';
 import MessageBox from '../../components/MessageBox';
-import PieChart from '../../components/PieChart';
+import PieChartComponent from '../../components/PieChart';
+import HistoryBox from '../../components/HistoryBox';
+import BarBox from '../../components/BarBox';
 
 import { formatedMonths } from '../../utils';
 import { expenses } from '../../utils/expenses';
@@ -144,7 +146,23 @@ export default function Dashboard() {
                title={message.title}
             />
 
-            <PieChart />
+            <PieChartComponent expenses={totalExpense} gains={totalGains}/>
+
+            <HistoryBox gains={gains} expenses={expenses} yearSelected={selectedYear}/>
+
+            <BarBox 
+               selectedMonth={selectedMonth}
+               selectedYear={selectedYear}
+               title="Entradas"
+               values={gains}
+            />
+
+            <BarBox 
+               selectedMonth={selectedMonth}
+               selectedYear={selectedYear}
+               title="Saídas"
+               values={expenses}
+            />
          </FlexContainer>
       </Container>
    );

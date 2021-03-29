@@ -1,8 +1,24 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface ColorProps {
    color: string;
 }
+
+const animate = keyframes`
+   0% {
+      transform: translateX(100px);
+      opacity: 0;
+   }
+
+   50% {
+      opacity: 0.3;
+   }
+
+   100% {
+      transform: translateX(0px);
+      opacity: 1;
+   }
+`;
 
 export const Container = styled.div`
    width: 48%;
@@ -12,6 +28,11 @@ export const Container = styled.div`
    color: ${props => props.theme.colors.white};
    border-radius: 7px;
    display: flex;
+   animation: ${animate} .5s;
+
+   @media(max-width: 950px) {
+      width: 100%;
+   }
 `;
 
 export const SideLeft = styled.aside`
@@ -27,7 +48,6 @@ export const LegendContainer = styled.ul`
    max-height: 160px;
    overflow-y: scroll;
    padding-right: 20px;
-
 
    &::-webkit-scrollbar {
       width: 10px;
@@ -51,8 +71,8 @@ export const Legend = styled.li<ColorProps>`
 
    > div {
       background-color: ${props => props.color};
-      width: 35px;
-      height: 35px;
+      width: 50px;
+      height: 45px;
       border-radius: 5px;
       display: flex;
       align-items: center;
@@ -62,6 +82,18 @@ export const Legend = styled.li<ColorProps>`
    > span {
       margin-left: 5px;
    }
+
+   @media(max-width: 770px) {
+      > div {
+      width: 45px;
+      height: 35px;
+      padding: 10px;
+   }
+   }
 `; 
 
-export const SideRight = styled.main``; 
+export const SideRight = styled.main`
+   display: flex;
+   flex: 1;
+   justify-content: center;
+`; 
